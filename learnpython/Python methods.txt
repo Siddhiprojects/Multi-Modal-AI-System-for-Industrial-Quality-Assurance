@@ -1,0 +1,34 @@
+List methods
+list.apped(element)
+list.extend([element1, element2...])
+list.insert(index,element)
+list.remove(element) #Removes first appereance of the value
+list.pop() #Removes random value and returns it
+list.clear() #Removes all
+list.index(element)
+list.count(element)
+list.sort()
+list.reverse()
+b = list.copy
+element in list
+
+Dictionary methods
+d.clear()
+b = d.copy()
+d.get(key)
+d.items() #Returns dict as tuples
+d.keys()
+d.values()
+d.pop(key) #Returns Value and removes key
+d.setdefault() #Returns value if key exists otherwise inserts key with default value
+d.update()
+len(d)
+del d[key]
+key in d
+
+Tuple Methods
+t.count(x), t.index(x),len(t),max(t),min(t),sum(t),slicing
+
+Set Methods
+s.add(element),s.remove(element), a.union(b), a.intersection(b), a.issubset(b),b.issuperset(a)
+
