@@ -1,0 +1,18 @@
+Python environment VScode
+
+Unit 1:Introduction to Python 
+Variables and Datatype, Strings, Lists and Tuples,Dictionary & Sets and methods of each
+
+Unit 2: Conditional Expression
+if , else , elif , valid conditions
+
+Unit 3: Loops in Python
+While, For loop
+
+Unit 4: Functions
+How to define Functions
+
+Resources:
+https://www.youtube.com/watch?v=UrsmFxEIp5k Full python one shot
+https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/YouTube/The%20Ultimate%20Python%20Handbook.pdf
+Pdf for python codes

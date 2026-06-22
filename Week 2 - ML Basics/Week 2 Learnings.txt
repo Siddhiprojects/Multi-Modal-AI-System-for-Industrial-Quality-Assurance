@@ -1,0 +1,81 @@
+Python environment Vscode
+
+Unit 1: Pandas
+Series, Dataframe and their methods
+
+Unit 2: LinearRegression
+from sklearn.linear_model import LinearRegression
+Predicting data that is continuous and lies on a line y = mx+c, model.fit, model.score and model.predict
+for text use dummy columns, get_dummies, one hot encoding, label encoder
+from sklearn.preprocessing import LabelEncoder
+training data; from sklearn.model_selection import train_test_split
+
+Unit 3: LogisticRegression
+Prediction Value is categorical; two types; Binary and Multiclass classification
+from sklearn.linear_model import LogisticRegression
+
+Unit 4: DecisionTree
+splitting data based on features like a tree.
+frrom sklearn.tree import DecisionTreeClassifier
+
+Unit 5: Support Vector Machine
+Draws a hyoerplane in n dinmensional space such that it maximizes margin between classification groups
+The classification line with higher margin is better.
+from sklearn.svm import SVC
+
+Unit 6: Random Forest Algorithm
+Multiple decision trees, n_estimator more no of random trees increases accuracy.
+It is a type of bagged tree.
+from sklearn.ensemble import RandomtreeClassifier
+
+Unit 7: Kfold Cross Validation
+Which model is better SVM, Random Forest, LogisticRegression, Decisiontree, Cross_val_score can evaluate
+along with parameters. It helps evaluate model performance. Kfold splits the data multiple times then check
+which model is better.
+Stratified Kfold is similar but better when you are seperating folds, 
+it will divide each of the classification categories in a uniform way.
+from sklearn.model_selection import StratifiedKFold
+
+Unit 8: Kmeans
+Form clusters of data, to detemine the corrrect no of clusters(k), use elbow method
+from sklearn.cluster import Kmeans
+
+Unit 9: K nearest Neighbours (KNN)
+K should not be very large or small
+from sklearn.Neighbours import KNeighborsClassifier
+from sklearn.preprocessing import Minmaxscaler
+
+Unit 10: NaiveBayes
+Probabilistic Classification algorithm that uses Bayes theorem and assumes all input features are independent
+making it simple and effective. for tasks like span filtering and text classification.
+Count Vectorizer technique
+Bernoulli: It assumes that all our features are binary such that htye take only two values.
+Multinomial: Its used when we have discrete data
+Guassian: Used when all features are continuous.
+
+Unit 11: Hyperparatuning
+The process of choosing optimal paramenter is called Hypertuning. 
+First we do model selection then we select optimal hyper parameters.
+from sklearn.model_selection import GridSearchCV
+
+Unit 12: Principal Component Analysis (PCA)
+Principal Component Analysis is technique used to reduce dimensions
+identifing features that are important
+Faster training and inference, data visualisation becomes easier
+PCA is a process of figuring out most important features 
+or principal components that has the most impact on the target variable
+PCA(n_components = x)
+Scale features before applying PCA, Accuracy might drop
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+Unit 13: Bagging
+Bagging is an ensemble learning technique that improves model accuracy by training multiple models
+on different random subsets of the training data and combining their predictions.
+from sklearn.ensemble import BaggingClassifier
+
+Resources:
+Pandas
+https://youtu.be/E9WGC0SLPVs?si=yrzPBON1ay1TQ3OP
+ML playlist
+https://www.youtube.com/playlist?list=PLeo1K3hjS3uvCeTYTeyfe0-rN5r8zn9rw
