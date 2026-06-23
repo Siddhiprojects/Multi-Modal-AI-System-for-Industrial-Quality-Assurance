@@ -1,0 +1,51 @@
+Python Environment: Vscode, Jupyter notebook and google colab
+Vscode is git default editor, Jupyter notebook could pip install tensorflow
+google colab can adjust runtime type to GPU which is way faster than the normal CPU for epoch
+
+Unit 1: Deep Learning, Neuron, Neural Network Theory
+A neuron is the basic unit of a neural network. It receives input values, 
+processes them using weights, bias, and an activation function, and then produces an output
+A neural network is a system made up of many interconnected neurons arranged in layers.
+
+Unit 2: Tensorflow installation and Keras
+Keras is not a full fledged Deep Learning framework its just convience for tensorflow
+
+Unit 3: Activation Function and maths
+tanh, sigmoid, ReLU, Leaky ReLU written as python functions 
+maths is very easy derivatives and matrices etc
+
+Unit 4: Gradient Descent
+Gradient Descent can help find parameters of a linear equation, used during training of neural network
+Implement Gradient Descent For Neural Network (or Logistic Regression)
+Batch Gradient Descent
+Stochastic Gradient Descent
+Mini Batch Gradient
+
+Unit 5: TensorBoard and GPU
+Tensorboard is a visualization tool provided with TensorFlow that helps monitor and 
+analyze the training of deep learning models. GPU is faster for going through epoch samples
+
+Unit 6: Customer Churn Prediction
+Analyzing why customers leave a business or stop buying services
+Using Analyzing
+
+Unit 7: Dropout Regularization
+Dropout regularization is a technique used in deep learning to prevent overfitting.
+
+Unit 8: CNN
+A Convolutional Neural Network (CNN) is a type of deep learning model 
+specifically designed for processing images and other grid-like data
+used for image classification
+
+Unit 9: Data Augmentation and Transfer Learning
+Data augmentation is a technique used in deep learning to increase the size and diversity of a 
+training dataset by creating modified versions of existing data.
+Transfer learning is a deep learning technique in which a 
+pre-trained model is reused for a new but related task
+
+Theory Covered: Precision, Recall, F1 Score, True Positive, CNN, Convulution Padding and stride, 
+Yolo Algorithms
+
+Resources:
+https://www.youtube.com/playlist?list=PLeo1K3hjS3uu7CxAacxVndI4bE_o3BDtO
+Till Video 32 for Deep Learning and CNN
