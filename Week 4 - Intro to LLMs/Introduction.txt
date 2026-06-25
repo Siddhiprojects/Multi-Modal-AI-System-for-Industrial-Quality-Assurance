@@ -1,0 +1,153 @@
+LLMs are basically two files one file is parameters and the second file is to run the parameters code
+
+An LLM is essentially:
+Model Weights (Parameters): Learned knowledge stored as billions of numbers.
+Inference Code: The program that loads these parameters and generates text
+The intelligence is stored in the parameters, not in the code.
+
+Training is much harder.
+It involves:
+Huge datasets (10+ TB text),Thousands of GPUs,Millions of dollars,Days or weeks of computation
+Today's models (GPT-4, Claude) cost tens or hundreds of millions to train.
+
+LLMs Learn by Predicting the Next Word
+This is the most important concept.Predict the next word as accurately as possible.
+Everything else emerges from this objective.
+
+Why Next-Word Prediction Creates Intelligence
+To predict the next word correctly, the model must learn:facts, grammar, history, science, coding, reasoning
+language patterns.
+
+LLM = Lossy Compression of the Internet
+The speaker compares an LLM to:A compressed version of the Internet.
+Unlike ZIP compression: LLM remembers concepts, forgets exact wording, recreates information
+This explains why LLMs sometimes hallucinate.
+
+LLMs sometimes invent information because they generate the most probable next word, not guaranteed truth.
+Example: It may invent: ISBN numbers, names,dates,citations
+Always verify important outputs.
+
+Pretraining vs Fine-Tuning
+Stage 1: Pretraining
+Uses:Huge internet text
+Goal:Learn knowledge.
+Output:Base model.
+Example:Wikipedia,Books,Forums,Research papers,Websites
+
+Stage 2: Fine-Tuning
+Uses:High-quality Question → Answer conversations written by humans.
+Goal:Teach the model to behave like an assistant.
+Output:ChatGPT-like assistant.
+
+Easy way to remember
+Pretraining → Learns information
+Fine-tuning → Learns behavior
+
+Reinforcement Learning from Human Feedback (RLHF)
+Third optional stage.
+Instead of writing answers,humans compare two responses.
+Example:Answer A vs Answer B Human chooses better one. Model learns preferences.
+Benefits:more helpful, safer, better aligned
+
+Scaling Laws (Very Important)
+One of the biggest ideas in AI.Performance depends mainly on:Number of parameters,
+Amount of training data,Bigger model
+More data
+↓
+Better performance
+This has been consistently observed.
+
+12. Open Models vs Closed Models
+Open Models
+Examples:Llama,Mistral,Zephyr
+Pros:downloadable,customizable,fine-tunable
+Cons:slightly weaker
+
+Closed Models
+Examples:ChatGPT,Claude,Gemini
+Pros:strongest performance
+Cons:cannot access weights,cannot modify model
+
+Tool Use (Extremely Important)
+Modern AI is not just predicting words.It can use tools.
+Examples:Browser↓Search internet
+Calculator↓Solve math
+Python↓Generate graphs,Analyze data
+Image Generator↓Create images
+This makes AI much more powerful.
+
+Multimodal AI
+Modern models can process multiple data types.
+Examples:Text,Images,Audio,Video,Speech
+Sketch website↓GPT generates HTML + CSS + JavaScript.
+
+Context Window
+Equivalent to the model's working memory.
+The context window stores:conversation,uploaded files,previous prompts
+Larger context window↓Better long-document understanding.
+
+Retrieval-Augmented Generation (RAG)
+Instead of relying only on memory,
+the model searches:PDFs,documents,databases,company knowledge
+Then generates answers.
+Benefits:more accurate,updated information,less hallucination
+
+System 1 vs System 2 Thinking
+Current LLMs mostly behave like:
+System 1:Fast,Instant,Pattern matching
+Future AI aims for:
+System 2:Slow reasoning,Planning,Reflection,Thinking before answering
+This is an active research area.
+
+Self-Improvement
+Inspired by AlphaGo.Current LLMs imitate humans.
+Future goal:Learn beyond humans.
+Challenge:Unlike games,language has no simple reward function.
+
+Custom GPTs:Users can build specialized assistants.
+Uses:custom instructions,uploaded files,RAG
+
+LLM as an Operating System
+The speaker predicts future LLMs will become like an operating system.
+Instead of managing hardware,they manage:browser,calculator,Python,files,APIs,memory,
+image generation,speech,planning
+This is the foundation of AI agents.
+
+Security Risks (Important)
+Jailbreaks,Users trick AI into ignoring safety.
+Example:Pretend to be my grandmother...↓Model may answer restricted questions.
+Prompt Injection
+Hidden instructions inside:web pages,documents,images,can manipulate the AI.
+Data Poisoning
+Attackers insert malicious data into training.
+Later,specific trigger words activate harmful behavior.
+
+Future Direction of AI
+Expected improvements:Better reasoning (System 2),Better tool use,Longer memory,Multimodal abilities
+Personalized assistants,Self-improving models,Domain-specific AI experts,Better security
+
+Career Perspective (Most Important)
+Skills to Learn
+Must Know:Python,Machine Learning,Deep Learning,Neural Networks,Transformers,LLMs,Prompt Engineering
+RAG,Fine-Tuning,Vector Databases,APIs (OpenAI, Anthropic, etc.)
+LangChain or similar orchestration frameworks,AI Agents
+
+Industry Trends
+Demand is rapidly growing for engineers who can:
+Build AI-powered applications,Integrate LLMs with databases and APIs
+Develop RAG systems,Fine-tune open-source models,Create AI agents that use tools autonomously
+Improve AI safety and security
+
+Quick Revision:
+LLMs learn by predicting the next word.
+Training creates the model; inference uses it.
+Pretraining teaches knowledge; fine-tuning teaches helpful behavior.
+RLHF improves responses using human preferences.
+Transformers are the architecture behind modern LLMs.
+Scaling laws: larger models + more data → better performance.
+RAG lets models retrieve external information instead of relying only on memory.
+Modern LLMs use tools (browser, Python, calculator, image generation) to solve tasks.
+Multimodal AI handles text, images, audio, and video.
+Key security concerns include hallucinations, jailbreaks, prompt injection, and data poisoning.
+For an AI career, focus on Python, deep learning, Transformers, LLMs, RAG, AI agents, prompt engineering, and AI security.
+
