@@ -1,0 +1,36 @@
+Python environment Vscode
+
+Introduction to Large Language Models (LLMs) :
+AI models trained on massive datasets to understand and generate human-like text.
+
+Theory and code involving:
+OpenAI API:
+An API used to integrate GPT models into applications.
+
+Prompt Engineering: 
+The practice of designing effective prompts to improve LLM responses.
+
+Chainlit: 
+A Python framework for building chatbot and LLM-based web applications.
+
+LangChain:
+A framework for developing LLM applications using prompts, memory, chains, and agents.
+
+Embeddings:
+Numerical vector representations of text that capture semantic meaning.
+
+Vector Database:
+A database that stores embeddings and enables fast similarity-based retrieval.
+
+Retrieval-Augmented Generation (RAG):
+A technique that combines document retrieval with LLMs to generate accurate, context-aware answers.
+
+LLM Agents:
+AI systems that can reason, plan, and use external tools to complete tasks.
+
+Prompt Optimization:
+The process of refining prompts to improve response quality while reducing token usage.
+
+Resources:
+https://www.youtube.com/watch?v=zjkBMFhNj_g
+https://www.youtube.com/watch?v=xZDB1naRUlk
