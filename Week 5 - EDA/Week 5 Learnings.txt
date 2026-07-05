@@ -1,0 +1,29 @@
+Python environment Jupyter Notebook
+
+## Exploratory Data Analysis (EDA)
+
+* Dataset exploration
+* Data inspection (`head()`, `info()`, `describe()`)
+* Data type analysis
+* Missing value analysis
+* Duplicate detection
+* Univariate, bivariate, and multivariate analysis
+* Data visualization
+* Correlation analysis
+* Outlier detection
+
+## Data Cleaning
+
+* Handling missing values
+* Removing duplicates
+* Correcting data types
+* Handling outliers
+* Cleaning inconsistent data
+* Removing irrelevant features
+* Feature scaling
+* Encoding categorical variables
+* Data preprocessing for machine learning
+
+Implemented some of the above steps on heart disease dataset
+
+Resources: On the notion page

@@ -8,6 +8,7 @@ print(df)
 #df.iloc[rowindex], df.dropna(), df.fillna(0, inplace=True) changes original
 #df.rename(columns = {dictonary}), df["column"][rowindex], len(df) , df.drop
 #df["zeroes"]= [0 for i in range(len(df))]
+#df['column'].replace({dictionary})
 '''def fx(a):
     return a+1
 df["new column"]= df["old column"].apply(fx)'''

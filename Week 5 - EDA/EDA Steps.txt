@@ -1,0 +1,88 @@
+## **Overview of EDA**
+
+### **Definition**
+
+EDA reviews, cleans, visualizes, and analyzes data to uncover patterns, spot anomalies, test hypotheses, and prepare for further analysis.
+
+### **Goals**
+
+- Understand data structure, types, and distributions.
+- Identify issues: missing data, outliers, inconsistencies.
+- Prepare data for modeling: feature engineering, cleaning.
+
+### **When to Use**
+
+- At the start of any analysis or modeling process.
+- When working with new datasets.
+
+## **Step-by-Step Guide to Perform a Good Exploratory Data Analysis (EDA)**
+
+### **1. Understand the Problem and Dataset**
+
+- Define the objective of the analysis, such as detecting anomalies, preparing for modeling, or finding patterns.
+- Review metadata and documentation to understand the context of the dataset, including column names and their roles (e.g., features, target).
+
+### **2. Load the Data**
+
+- Import the dataset into a tool like Python, R, or Excel for analysis.
+- Verify that the dataset is correctly loaded and structured.
+
+### **3. Inspect the Data**
+
+- Preview the first and last few rows to get an initial understanding.
+- Summarize the dataset to view the number of rows, columns, data types, and non-null counts.
+- Note any unexpected data types or structures that may need correction.
+
+### **4. Check for Missing Data**
+
+- Identify the total and percentage of missing values in each column.
+- Visualize missing data to understand its distribution across the dataset.
+- Decide on strategies to handle missing values, such as dropping, imputing, or flagging them.
+
+### **5. Analyze Data Distributions**
+
+- Perform univariate analysis to examine the distribution of numerical and categorical columns.
+- Use summary statistics like mean, median, standard deviation, and percentiles to understand data spread.
+- Look for skewness or abnormalities in the distribution.
+
+### **6. Detect and Handle Outliers**
+
+- Identify outliers using methods like IQR (Interquartile Range) or Z-scores.
+- Visualize outliers with boxplots or scatter plots.
+- Handle outliers by either removing them, capping them, or transforming them based on the context.
+
+### **7. Explore Relationships Between Variables**
+
+- Perform correlation analysis to identify relationships between numerical variables.
+- Create scatter plots, pair plots, or heatmaps to visualize these relationships.
+- Examine relationships between categorical and numerical variables using group-wise statistics.
+
+### **8. Analyze Categorical Variables**
+
+- Conduct frequency analysis for each categorical variable to understand its distribution.
+- Compare categorical groups to numerical data to identify trends or anomalies.
+- Visualize distributions using bar charts, count plots, or pie charts.
+
+### **9. Time-Based Analysis (if applicable)**
+
+- Convert date columns to a usable format (e.g., extract year, month, day).
+- Analyze time-based trends, seasonality, or patterns.
+- Visualize temporal data using line charts or time series plots.
+
+### **10. Perform Feature Engineering**
+
+- Create new features from existing ones to improve insights or model performance.
+- Use techniques like binning, transformations, and aggregations to create meaningful categories or simplify numerical ranges.
+- Validate the relevance and utility of newly created features.
+
+### **11. Summarize Key Findings**
+
+- Highlight the major patterns, trends, and relationships discovered during the analysis.
+- Document the steps taken to clean, transform, and analyze the data.
+- Identify key takeaways, including potential areas for further investigation or modeling.
+
+### **12. Report Your Insights**
+
+- Present findings visually using charts, graphs, and tables.
+- Write a concise report summarizing your methodology, results, and recommendations.
+- Ensure the report aligns with the original objective and provides actionable insights.

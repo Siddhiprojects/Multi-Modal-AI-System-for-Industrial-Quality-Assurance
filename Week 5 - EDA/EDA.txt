@@ -1,0 +1,302 @@
+## **Data Inspection and Validation**
+
+### **When to Use**
+
+- **New Dataset** Use `.head()`, `.info()`, `.describe()` to understand structure and potential issues.
+- **Before Analysis** Check for missing data, inconsistent types, or incorrect values.
+
+### **Core Commands**
+
+```python
+df.head()  # Preview first 5 rows
+df.info()  # Data types and non-null counts
+df.describe()  # Summary stats for numerical columns
+df.value_counts()  # Frequency counts for categorical variables
+
+```
+
+### **Validate and Transform Data Types**
+
+```python
+df["date_column"] = pd.to_datetime(df["date_column"])  # Convert to datetime
+df["column"] = df["column"].astype("desired_type")     # Convert to desired type
+```
+
+## **Handling Missing Data**
+
+### **When to Use**
+
+- **Small Missing Proportion (<5%)** Drop rows or columns
+- **Moderate Missing Values** Impute with mean, median, or mode
+- **Large Gaps** Use domain knowledge to impute or flag missing data
+
+### **Strategies**
+
+```python
+df.dropna(thresh=len(df) * 0.95, axis=1, inplace=True)  # Drop columns with >5% missing
+df["column"].fillna(df["column"].median(), inplace=True)  # Numerical imputation
+df["category"].fillna(df["category"].mode()[0], inplace=True)  # Categorical imputation
+
+```
+
+## **Summary Statistics and Aggregation**
+
+### **When to Use**
+
+- To understand data spread, central tendency, and variability.
+- To compare aggregated values for groups.
+
+### **Key Functions**
+
+```python
+df["column"].mean()  # Single column mean
+df.groupby("Category").agg({"NumericColumn": ["mean", "std"]})  # Grouped aggregations
+
+```
+
+## **Extended Visualization Techniques**
+
+### **When to Use**
+
+- **Univariate Analysis** Explore distributions of individual variables.
+- **Bivariate Analysis** Examine relationships between two variables.
+- **Multivariate Analysis** Investigate interactions among multiple variables.
+
+### **Univariate Visualization**
+
+### **Histogram**
+
+**When to use**: To visualize the distribution of a single numerical variable.
+
+```python
+sns.histplot(data=df, x="Column", bins=20, kde=True)
+plt.title("Histogram of Column")
+plt.show()
+
+```
+
+### **Boxplot**
+
+**When to use**: To identify outliers and compare distributions of a single variable.
+
+```python
+sns.boxplot(data=df, y="Column")
+plt.title("Boxplot of Column")
+plt.show()
+
+```
+
+### **Violin Plot**
+
+**When to use**: To visualize the distribution of a single variable and compare across categories.
+
+```python
+sns.violinplot(data=df, y="Column")
+plt.title("Violin Plot of Column")
+plt.show()
+
+```
+
+### **Bivariate Visualization**
+
+**What are bivariate values?** Bivariate values are two values that are compared to each other. For example, the height and weight of a person are bivariate values.
+
+### **Scatterplot**
+
+**When to use**: To visualize the relationship between two numerical variables.
+
+```python
+sns.scatterplot(data=df, x="Var1", y="Var2", hue="Category", style="Group")
+plt.title("Scatterplot of Var1 vs Var2")
+plt.show()
+
+```
+
+### **Heatmap**
+
+**When to use**: To visualize the correlation between numerical variables.
+
+```python
+sns.heatmap(df.corr(), annot=True, fmt=".2f", cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
+
+```
+
+### **Multivariate Visualization**
+
+**What is multivariate value?** Multivariate value is a value that is compared to multiple other values. For example, the height, weight, and age of a person are multivariate values.
+
+### **Pairplot**
+
+**When to use**: To visualize relationships between multiple numerical variables.
+
+```python
+sns.pairplot(df, vars=["Var1", "Var2", "Var3"], hue="Category")
+plt.show()
+
+```
+
+### **FacetGrid**
+
+**When to use**: To create multiple plots for different categories or groups.
+
+```python
+g = sns.FacetGrid(df, col="Category", row="Group", margin_titles=True)
+g.map(sns.scatterplot, "Var1", "Var2")
+plt.show()
+
+```
+
+### **Time-Series Visualization**
+
+**What is a time-series value?** A time-series value is a value that changes over time. For example, the temperature of a place changes over time.
+
+### **Line Plot**
+
+**When to use**: To visualize trends over time for multiple categories.
+
+```python
+sns.lineplot(data=df, x="Date", y="Value", hue="Category")
+plt.title("Trend Over Time")
+plt.show()
+
+```
+
+### **Seasonal Decomposition**
+
+**When to use**: To decompose time-series data into trend, seasonality, and residuals.
+
+```python
+from statsmodels.tsa.seasonal import seasonal_decompose
+decomposition = seasonal_decompose(df["TimeSeriesColumn"], period=12)
+decomposition.plot()
+plt.show()
+```
+## **Detecting and Managing Outliers**
+
+### **When to Use**
+
+- **Univariate Analysis** Use IQR or Z-Score methods.
+- **High-Dimensional Data** Use machine learning methods like Isolation Forest.
+
+### **Detection Techniques**
+
+### **IQR**
+
+**Why use IQR?** IQR is less sensitive to outliers than Z-Score.
+
+```python
+Q1 = df["Column"].quantile(0.25)
+Q3 = df["Column"].quantile(0.75)
+IQR = Q3 - Q1
+lower = Q1 - 1.5 * IQR
+upper = Q3 + 1.5 * IQR
+outliers = df[(df["Column"] < lower) | (df["Column"] > upper)]
+
+```
+
+### **Z-Score**
+
+**Why use Z-Score?** Z-Score is sensitive to outliers but useful for standardized data.
+
+```python
+from scipy.stats import zscore
+df["zscore"] = zscore(df["Column"])
+outliers = df[df["zscore"].abs() > 3]
+
+```
+
+### **Management Techniques**
+
+### **Log Transformation**
+
+**Why to use log transformation?** Log transformation reduces the impact of outliers.
+**When to use**: For right-skewed data.
+
+```python
+df["Log_Column"] = np.log(df["Column"] + 1)
+
+```
+
+### **Winsorization**
+
+**Why use winsorization?** Winsorization replaces extreme values with less extreme ones.
+**When to use**: For data with outliers
+
+The choice between dropping and winsorizing outliers depends on your dataset and analysis goals. Drop outliers when you have sufficient data and the outliers are clearly errors or non-representative points, especially when your analysis requires strict normality. Use winsorization when working with smaller datasets where you can't afford to lose observations, or when the outliers represent extreme but legitimate values that you want to retain while reducing their impact on your analysis.
+
+```python
+from scipy.stats.mstats import winsorize
+df["Winsorized_Column"] = winsorize(df["Column"], limits=[0.05, 0.05])
+
+```
+## **Temporal Analysis**
+
+### **When to Use**
+
+- To analyze trends, seasonality, and cycles in time-series data.
+
+### **Examples**
+
+```python
+df["year"] = df["date_column"].dt.year
+df["month"] = df["date_column"].dt.month
+```
+## **Correlation Analysis**
+
+### **When to Use**
+
+- Before feature selection or modeling to identify redundant features.
+
+### **Heatmap Example**
+
+```python
+sns.heatmap(df.corr(), annot=True, fmt=".2f", cmap="coolwarm")
+```
+## **Feature Engineering**
+
+### **When to Use**
+
+- To create new features from existing ones for better insights.
+
+### **Binning Example**
+
+```python
+bins = [0, 50, 100, 150]
+labels = ["Low", "Medium", "High"]
+df["Category"] = pd.cut(df["Column"], bins=bins, labels=labels)
+```
+
+## **Hypothesis Testing**
+
+### **When to Use**
+
+- To validate assumptions or relationships in the dataset.
+
+### **T-Test Example**
+
+```python
+from scipy.stats import ttest_ind
+t_stat, p_val = ttest_ind(group1, group2)
+```
+
+In **machine learning (ML)**, a **t-test** is typically used in scenarios where you 
+want to compare the performance of two models or algorithms. Here are a couple of key applications:
+
+1. **Comparing Model Performance** – Suppose you have developed **two different models** for a classification task and want to know if the difference in their accuracy is 
+**statistically significant**. You can run multiple experiments, collect accuracy scores from both models, and use a **t-test** to check whether 
+one model consistently performs better.
+2. **Feature Selection** – If you're analyzing whether a particular feature has a statistically significant effect on the target variable, a **t-test** can help 
+determine whether to include or exclude a feature in the model.
+3. **Evaluating Different Training Approaches** – When testing **two different training techniques**
+ (e.g., different optimization algorithms, hyperparameter settings, or data preprocessing strategies), a **t-test** can be 
+used to confirm whether a particular approach leads to a statistically significant improvement.
+
+Scenario	                             Recommended Technique
+Distribution of Numerical Data	         Histogram, KDE, Boxplot, Violin Plot
+Compare Two Numerical Variables	         Scatterplot, Bubble Plot, Pairplot
+Categorical and Numerical Data	         Barplot, Swarmplot, Boxplot
+Trends Over Time	                     Line Plot, Seasonal Decomposition Plot
+Multivariate Analysis	                 Pairplot, Heatmap, FacetGrid
+

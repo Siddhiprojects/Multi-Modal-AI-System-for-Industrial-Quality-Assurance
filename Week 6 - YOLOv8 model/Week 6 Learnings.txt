@@ -1,0 +1,24 @@
+Python Environment Google colab
+Using T4 GPU of google colab to train CV model using Yolov8
+
+Task:
+Use Yolov8 model, experiment with nano, small, medium and large models to get best output
+- Train a YOLOv8 model using the provided dataset. 
+- Save the best model (best.pt). 
+- Report the following metrics: 
+- Precision 
+- Recall 
+- mAP@50 
+- mAP@50-95 
+
+- Include screenshots of: 
+- Training curves 
+- Confusion matrix 
+- Sample predictions
+
+Learnt how to train YOLOv8 model epochs = 75:
+concluded best model is YOLOv8m
+Precision : 0.7957649608017346
+Recall    : 0.6931948866420186
+mAP@50    : 0.7993271111279884
+mAP@50-95 : 0.5038951805615061
